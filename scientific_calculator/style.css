@@ -48,6 +48,10 @@
   background-color: #f7f7f7;
 }
 
+.keys{
+  background-color: white !important;
+}
+
 .trigno-func {
   display: flex;
 }
