@@ -48,7 +48,7 @@
   background-color: #f7f7f7;
 }
 
-.keys{
+.keys {
   background-color: white !important;
 }
 
@@ -89,4 +89,9 @@
 
 .dropdown img {
   height: 25px;
+}
+
+.alert {
+  display: none;
+  background-color: black;
 }
