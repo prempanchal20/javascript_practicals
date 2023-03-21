@@ -1,6 +1,13 @@
 let input = document.querySelector("input");
 let buttons = document.querySelectorAll("button");
 let backSpace = document.getElementById("backSpace");
+// let factorial = document.getElementById("factorial");
+
+function factorial(num) {
+  if (num < 0) return -1;
+  else if (num == 0) return 1;
+  else return num * factorial(num - 1);
+}
 
 // Button Click Event
 buttons.forEach((btn) =>
@@ -22,6 +29,13 @@ buttons.forEach((btn) =>
       input.value += "/";
     } else if (event.target.innerText === "C") {
       input.value = "";
+    } else if (event.target.innerText === "π") {
+      π = 3.14;
+      input.value = input.value * π;
+    } else if (event.target.innerText === "x2") {
+      input.value = Math.pow(input.value, 2);
+    } else if (event.target.innerText === "n!") {
+      input.value = factorial(input.value);
     } else {
       input.value += event.target.innerText;
     }
