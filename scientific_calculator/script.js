@@ -16,7 +16,17 @@ buttons.forEach((btn) =>
       let backSpace = inputVal.substring(0, inputVal.length - 1);
       console.log(backSpace);
       input.value = backSpace;
-    } else {
+    }
+
+    else if(event.target.innerText === "x"){
+      input.value += "*"
+    }
+
+    else if(event.target.innerText === "÷"){
+      input.value += "/"
+    }
+
+    else {
       input.value += event.target.innerText;
     }
   })
