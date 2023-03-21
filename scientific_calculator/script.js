@@ -1,22 +1,28 @@
 let input = document.querySelector("input");
 let buttons = document.querySelectorAll("button");
 let backSpace = document.getElementById("backSpace");
-// let factorial = document.getElementById("factorial");
 
+// Factorial Functionality
 function factorial(num) {
   if (num < 0) return -1;
   else if (num == 0) return 1;
   else return num * factorial(num - 1);
 }
 
+// Log Functionality
+// function getLog(num1) {
+//   return Math.log(num1);
+// }
+
 // Button Click Event
 buttons.forEach((btn) =>
   btn.addEventListener("click", (event) => {
     console.log(event.target.innerText);
     let inputVal = input.value;
+
+    // Performed Eval()
     if (event.target.innerText === "=") {
       console.log(input.value);
-      //   console.log(newVal);
       console.log(eval(input.value));
       input.value = eval(input.value);
     } else if (event.target.innerText === "") {
@@ -36,6 +42,8 @@ buttons.forEach((btn) =>
       input.value = Math.pow(input.value, 2);
     } else if (event.target.innerText === "n!") {
       input.value = factorial(input.value);
+    } else if (event.target.innerText === "log") {
+      input.value = Math.log(input.value);
     } else {
       input.value += event.target.innerText;
     }
