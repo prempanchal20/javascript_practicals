@@ -9,10 +9,27 @@ function factorial(num) {
   else return num * factorial(num - 1);
 }
 
-// Log Functionality
-// function getLog(num1) {
-//   return Math.log(num1);
-// }
+// Trignometry
+function trigno(type, num1) {
+  console.log("Num Value", num1);
+  switch (type) {
+    case "Sin":
+      input.value = Math.sin((`${num1}` * Math.PI) / 180.0);
+      break;
+
+    case "Cos":
+      input.value = Math.cos((`${num1}` * Math.PI) / 180.0);
+      break;
+
+    case "Tan":
+      input.value = Math.tan((`${num1}` * Math.PI) / 180.0);
+      break;
+
+    default:
+      console.log("default");
+      break;
+  }
+}
 
 // Button Click Event
 buttons.forEach((btn) =>
@@ -23,8 +40,28 @@ buttons.forEach((btn) =>
     // Performed Eval()
     if (event.target.innerText === "=") {
       console.log(input.value);
-      console.log(eval(input.value));
-      input.value = eval(input.value);
+
+      if (input.value.includes("Sin")) {
+        let trig = input.value;
+        let trig__num = trig.split(" ");
+        let numArray = trig__num[1];
+        let type = trig__num[0];
+        trigno(type, numArray);
+      } else if (input.value.includes("Cos")) {
+        let trig = input.value;
+        let trig__num = trig.split(" ");
+        let numArray = trig__num[1];
+        let type = trig__num[0];
+        trigno(type, numArray);
+      } else if (input.value.includes("Tan")) {
+        let trig = input.value;
+        let trig__num = trig.split(" ");
+        let numArray = trig__num[1];
+        let type = trig__num[0];
+        trigno(type, numArray);
+      } else {
+        input.value = eval(input.value);
+      }
     } else if (event.target.innerText === "") {
       let backSpace = inputVal.substring(0, inputVal.length - 1);
       console.log(backSpace);
@@ -44,6 +81,14 @@ buttons.forEach((btn) =>
       input.value = factorial(input.value);
     } else if (event.target.innerText === "log") {
       input.value = Math.log(input.value);
+    } else if (event.target.innerText === "ln") {
+      input.value = Math.log(input.value);
+    } else if (event.target.innerText === "Sin") {
+      input.value = "Sin ";
+    } else if (event.target.innerText === "Cos") {
+      input.value = "Cos ";
+    } else if (event.target.innerText === "Tan") {
+      input.value = "Tan ";
     } else {
       input.value += event.target.innerText;
     }
