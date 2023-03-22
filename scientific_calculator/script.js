@@ -11,7 +11,6 @@ function factorial(num) {
 
 // Trignometry
 function trigno(type, num1) {
-  console.log("Num Value", num1);
   switch (type) {
     case "Sin":
       input.value = Math.sin((`${num1}` * Math.PI) / 180.0);
@@ -26,7 +25,7 @@ function trigno(type, num1) {
       break;
 
     default:
-      console.log("default");
+      console.log("Trigonometry - Default");
       break;
   }
 }
@@ -41,6 +40,7 @@ buttons.forEach((btn) =>
     if (event.target.innerText === "=") {
       console.log(input.value);
 
+      // Trigonometry Function
       if (input.value.includes("Sin")) {
         let trig = input.value;
         let trig__num = trig.split(" ");
@@ -89,6 +89,12 @@ buttons.forEach((btn) =>
       input.value = "Cos ";
     } else if (event.target.innerText === "Tan") {
       input.value = "Tan ";
+    } else if (event.target.innerText === "Round") {
+      input.value = Math.round(input.value);
+    } else if (event.target.innerText === "Ceil") {
+      input.value = Math.ceil(input.value);
+    } else if (event.target.innerText === "Floor") {
+      input.value = Math.floor(input.value);
     } else {
       input.value += event.target.innerText;
     }
