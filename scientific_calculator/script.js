@@ -79,6 +79,8 @@ buttons.forEach((btn) =>
       input.value = Math.pow(input.value, 2);
     } else if (event.target.innerText === "n!") {
       input.value = factorial(input.value);
+    } else if (event.target.innerText === "1/x") {
+      input.value = `1/`;
     } else if (event.target.innerText === "√") {
       input.value = Math.sqrt(input.value);
     } else if (event.target.innerText === "log") {
