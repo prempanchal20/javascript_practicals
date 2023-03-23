@@ -20,26 +20,20 @@ function btnDegToRad(inputVal, btnVal) {
   }
 }
 
-// EXP Functionality
-function exponential(num) {
-  let valExp = num.search("exp");
-  console.log(valExp);
-
-  if (valExp === 1) {
-    let split_exp = num.split("exp ");
-    console.log("split exp method ", split_exp);
-    split_exp.slice(1, 0, "10");
-    console.log("abc", split_exp);
-    input.value = Number(split_exp[0] * split_exp[1] ** split_exp[2]);
-  } else if (num == "mod") {
-    let split_mod = value.split(" mod ");
-    console.log(split_mod);
+// MOD & 10x Functionality
+function modOperator(num) {
+  // console.log("mod function")
+  if (num.includes("mod")) {
+    // console.log("Inside Loop");
+    let split_mod = num.split("mod");
     input.value = Number(split_mod[0] % split_mod[1]);
-  } else if (value.includes("10 x"));
-  let splitTen = value.split("*");
-  let multiplication = 10;
-  for (let i = 1; i < Number(splitTen[1]); i++) {
-    multiplication = multiplication * 10;
+    console.log("split mod works..!", split_mod);
+  } else if (num.includes("10 x")) {
+    let splitTen = num.split("*");
+    let multiplication = 10;
+    for (let i = 1; i < Number(splitTen[1]); i++) {
+      multiplication = multiplication * 10;
+    }
   }
 }
 
@@ -50,7 +44,7 @@ function factorial(num) {
   else return num * factorial(num - 1);
 }
 
-// Trignometry
+// Trignometry Functionality
 function trigno(type, num1) {
   switch (type) {
     case "Sin":
@@ -71,6 +65,7 @@ function trigno(type, num1) {
   }
 }
 
+// +/- Functionality
 function plusMinusOperator(num) {
   input.value = -num;
 }
@@ -103,6 +98,9 @@ buttons.forEach((btn) =>
         let numArray = trig__num[1];
         let type = trig__num[0];
         trigno(type, numArray);
+      } else if (input.value.includes("mod")) {
+        modOperator(input.value);
+        console.log("else if mod");
       } else {
         input.value = eval(input.value);
       }
@@ -123,9 +121,7 @@ buttons.forEach((btn) =>
     } else if (event.target.innerText === "x") {
       input.value += "*";
     } else if (event.target.innerText === "exp") {
-      input.value = exponential("exp ");
-    } else if (event.target.innerText === "mod") {
-      input.value = exponential("mod ");
+      input.value = Math.exp(input.value);
     } else if (event.target.innerText === "÷") {
       input.value += "/";
     } else if (event.target.innerText === "C") {
@@ -147,11 +143,9 @@ buttons.forEach((btn) =>
       input.value = Math.abs(input.value);
     } else if (event.target.innerText === "√") {
       input.value = Math.sqrt(input.value);
-    }
-     else if(event.target.innerText === '10 x'){
-      input.value = "10*"
-    }
-    else if (event.target.innerText === "log") {
+    } else if (event.target.innerText === "10 x") {
+      input.value = "10*";
+    } else if (event.target.innerText === "log") {
       input.value = Math.log(input.value) / Math.LN10;
     } else if (event.target.innerText === "ln") {
       input.value = Math.log(input.value);
