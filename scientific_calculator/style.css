@@ -43,7 +43,7 @@
   padding: 10px;
   border: 0px;
   width: 100px;
-  margin: 1px;
+  margin: 2px;
   height: 50px;
   background-color: #f7f7f7;
 }
@@ -51,8 +51,9 @@
 .keys {
   background-color: white !important;
   justify-content: space-around;
+  margin: 15px;
 }
-.down-array{
+.down-array {
   margin: 5px;
 }
 .trigno-func {
@@ -75,8 +76,11 @@
   background-color: white;
   width: 100px;
   padding: 10px;
+  margin: 5px;
 }
-
+.trigno-func ul li {
+  padding: 5px;
+}
 .dropdown:hover ul {
   display: block;
 }

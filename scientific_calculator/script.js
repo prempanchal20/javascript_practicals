@@ -3,28 +3,30 @@ let buttons = document.querySelectorAll("button");
 let backSpace = document.getElementById("backSpace");
 let trigonometry = document.getElementById("trigonometry");
 
-// Degree to Radiant Functionality
-function btnDegToRad(inputVal, btnVal) {
-  // console.log(typeof inputVal);
-  if (inputVal === "") {
-    alert("Please Enter Input Value!");
+// Change Onclick button from DEG to RAD
+const btn = document.getElementById("deg");
+btn.addEventListener("click", function () {
+  if (btn.textContent === "DEG") {
+    btn.textContent = "RAD";
+  } else {
+    btn.textContent = "DEG";
   }
-  if (btnVal === "DEG") {
+});
+
+// Degree to Radiant Functionality
+function btnDegToRad(inputVal, btn) {
+  if (btn === "DEG") {
     let pi = Math.PI;
     input.value = inputVal * (180 / pi);
-    degToRad.innerText = "RAD";
   } else {
     let pi = Math.PI;
     input.value = inputVal * (pi / 180);
-    degToRad.innerText = "DEG";
   }
 }
 
 // MOD & 10x Functionality
 function modOperator(num) {
-  // console.log("mod function")
   if (num.includes("mod")) {
-    // console.log("Inside Loop");
     let split_mod = num.split("mod");
     input.value = Number(split_mod[0] % split_mod[1]);
     console.log("split mod works..!", split_mod);
@@ -100,7 +102,6 @@ buttons.forEach((btn) =>
         trigno(type, numArray);
       } else if (input.value.includes("mod")) {
         modOperator(input.value);
-        console.log("else if mod");
       } else {
         input.value = eval(input.value);
       }
@@ -109,15 +110,16 @@ buttons.forEach((btn) =>
       console.log(backSpace);
       input.value = backSpace;
     } else if (event.target.innerText === "MR") {
-      input.value = localStorage.getItem("input.value");
+      input.value = localStorage.getItem("inputVal");
     } else if (event.target.innerText === "MC") {
-      input.value = localStorage.removeItem("input.value");
+      input.value = localStorage.removeItem("inputVal");
     } else if (event.target.innerText === "M+") {
-      input.value = Number(localStorage.getItem("inputVal")) + input.value;
+      input.value =
+        Number(localStorage.getItem("inputVal")) + Number(input.value);
     } else if (event.target.innerText === "M-") {
-      input.value = input.value - Number(localStorage.getItem("InputVal"));
+      input.value = input.value - Number(localStorage.getItem("inputVal"));
     } else if (event.target.innerText === "MS") {
-      input.value = localStorage.setItem("inputVal", input.value);
+      localStorage.setItem("inputVal", input.value);
     } else if (event.target.innerText === "x") {
       input.value += "*";
     } else if (event.target.innerText === "exp") {
@@ -131,6 +133,7 @@ buttons.forEach((btn) =>
     } else if (event.target.innerText === "π") {
       π = 3.14;
       input.value = input.value * π;
+      input.value = Number(input.value + π);
     } else if (event.target.innerText === "x2") {
       input.value = Math.pow(input.value, 2);
     } else if (event.target.innerText === "n!") {
@@ -163,6 +166,10 @@ buttons.forEach((btn) =>
       input.value = Math.ceil(input.value);
     } else if (event.target.innerText === "Floor") {
       input.value = Math.floor(input.value);
+    } else if (event.target.innerText === "DEG") {
+      btnDegToRad(input.value, "DEG");
+    } else if (event.target.innerText === "RAD") {
+      btnDegToRad(input.value, "RAD");
     } else {
       input.value += event.target.innerText;
     }

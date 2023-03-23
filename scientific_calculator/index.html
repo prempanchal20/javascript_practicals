@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="Images/calculator.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css" />
     <title>Scientific Calculator</title>
 </head>
@@ -21,7 +23,7 @@
 
             <div class="calculator_keys">
                 <div class="rows">
-                    <button class="keys">DEG</button>
+                    <button class="keys" id="deg">DEG</button>
                     <button class="keys">F-E</button>
                 </div>
 
@@ -37,7 +39,7 @@
                     <button class="dropdown keys">
                         <img src="https://img.icons8.com/ios-glyphs/30/null/trigonometry.png"
                             alt="Trigonometry" />Trigonometry<i class="down-array fa-solid fa-chevron-down"></i>
-                        <ul>
+                        <ul class="trig">
                             <li id="sin">Sin</li>
                             <li id="cos">Cos</li>
                             <li id="tan">Tan</li>
@@ -45,8 +47,9 @@
                     </button>
 
                     <button class="dropdown keys">
-                        <img src="https://img.icons8.com/ios-glyphs/30/null/frequency-f.png" alt="function" />Function<i class="down-array fa-solid fa-chevron-down"></i>
-                        <ul>
+                        <img src="https://img.icons8.com/ios-glyphs/30/null/frequency-f.png" alt="function" />Function<i
+                            class="down-array fa-solid fa-chevron-down"></i>
+                        <ul class="func">
                             <li id="round">Round</li>
                             <li id="ceil">Ceil</li>
                             <li id="floor">Floor</li>
