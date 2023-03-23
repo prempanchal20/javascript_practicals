@@ -50,10 +50,14 @@
 
 .keys {
   background-color: white !important;
+  justify-content: space-around;
 }
-
+.down-array{
+  margin: 5px;
+}
 .trigno-func {
   display: flex;
+  margin: 7px;
 }
 
 .dropdown {
@@ -68,7 +72,9 @@
   position: absolute;
   list-style: none;
   top: 70%;
-  left: 50%;
+  background-color: white;
+  width: 100px;
+  padding: 10px;
 }
 
 .dropdown:hover ul {
@@ -89,9 +95,4 @@
 
 .dropdown img {
   height: 25px;
-}
-
-.alert {
-  display: none;
-  background-color: black;
 }
