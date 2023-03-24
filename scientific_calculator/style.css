@@ -52,14 +52,35 @@
   width: 100px;
 }
 
-/* .trigonometry{
-  background-color: white;
-} */
-
 .keys {
   background-color: white !important;
   justify-content: space-around;
   margin: 15px;
+}
+#mc {
+  opacity: 0.4;
+}
+
+#mr{
+  opacity: 0.4;
+}
+
+#equals{
+  background-color: rgb(96, 183, 233);
+}
+
+.trigonometry {
+  display: flex;
+  align-items: center;
+}
+
+.trigonometry img {
+  padding: 2px;
+}
+
+.func {
+  display: flex;
+  align-items: center;
 }
 .down-array {
   margin: 5px;
@@ -100,15 +121,15 @@
   left: 5px;
 }
 
-.dropdown.menu li{
+.dropdown.menu li {
   padding: 3px;
 }
 
-.dropdown.keys li{
+.dropdown.keys li {
   padding: 3px;
 }
 
-.dropdown.func li{
+.dropdown.func li {
   padding: 3px;
 }
 
