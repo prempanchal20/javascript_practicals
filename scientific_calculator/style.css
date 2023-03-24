@@ -48,8 +48,8 @@
   background-color: #f7f7f7;
 }
 
-#deg {
-  width: 100px;
+.degToRad {
+  width: 40%;
 }
 
 .keys {
@@ -61,11 +61,11 @@
   opacity: 0.4;
 }
 
-#mr{
+#mr {
   opacity: 0.4;
 }
 
-#equals{
+#equals {
   background-color: rgb(96, 183, 233);
 }
 
@@ -90,7 +90,6 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
 }
 
 .rows .trigno-func {
