@@ -103,7 +103,7 @@
   align-items: center;
 }
 
-.trigonometry:hover ul {
+.trigonometry ul {
   display: block;
   list-style-type: none;
   width: 100%;
@@ -111,7 +111,7 @@
   left: 1px;
 }
 
-.func:hover ul {
+.func ul {
   display: block;
   list-style-type: none;
   list-style-type: none;
@@ -132,7 +132,7 @@
   padding: 3px;
 }
 
-.square_fun:hover ul {
+.square_fun ul {
   display: block;
   list-style-type: none;
   list-style-type: none;
