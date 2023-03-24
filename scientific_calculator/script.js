@@ -5,23 +5,28 @@ let trigonometry = document.getElementById("trigonometry");
 
 // Change Onclick button from DEG to RAD
 const btn = document.getElementById("deg");
-btn.addEventListener("click", function () {
-  if (btn.textContent === "DEG") {
+btn.addEventListener("click", function () 
+{
+  if (btn.textContent === "DEG") 
+  {
     btn.textContent = "RAD";
   } 
   
-  else {
+  else 
+  {
     btn.textContent = "DEG";
   }
 });
 
 // Degree to Radiant Functionality
 function btnDegToRad(inputVal, btn) {
-  if (btn === "DEG") {
+  if (btn === "DEG")
+  {
     let pi = Math.PI;
     input.value = inputVal * (180 / pi);
   } 
-  else {
+  else 
+  {
     let pi = Math.PI;
     input.value = inputVal * (pi / 180);
   }
@@ -34,7 +39,8 @@ function modOperator(num) {
     let split_mod = num.split("mod");
     input.value = Number(split_mod[0] % split_mod[1]);
   } 
-  else if (num.includes("10 x")) {
+  else if (num.includes("10 x")) 
+  {
     let splitTen = num.split("*");
     let multiplication = 10;
     for (let i = 1; i < Number(splitTen[1]); i++) {
@@ -44,7 +50,8 @@ function modOperator(num) {
 }
 
 // Factorial Functionality
-function factorial(num) {
+function factorial(num) 
+{
   if (num < 0) return -1;
   else if (num == 0) return 1;
   else return num * factorial(num - 1);
@@ -52,7 +59,8 @@ function factorial(num) {
 
 // Trignometry Functionality
 function trigno(type, num1) {
-  switch (type) {
+  switch (type) 
+  {
     case "Sin":
       input.value = Math.sin((`${num1}` * Math.PI) / 180.0);
       break;
@@ -75,11 +83,9 @@ function plusMinusOperator(num) {
 // Button Click Event
 buttons.forEach((btn) =>
   btn.addEventListener("click", (event) => {
-    // console.log(event.target.innerText);
     let inputVal = input.value;
 
     if (event.target.innerText === "=") {
-      // console.log(input.value);
 
       // Trigonometry Function
       if (input.value.includes("Sin")) 
@@ -114,7 +120,14 @@ buttons.forEach((btn) =>
         modOperator(input.value);
       } 
       
-      else {
+      else if(input.value.includes("^"))
+      {
+        let xSquareY = input.value.split("^");
+        input.value = Math.pow(Number(xSquareY[0]), Number(xSquareY[1]))
+      }
+
+      else 
+      {
         input.value = eval(input.value);
       }
     } 
@@ -122,7 +135,6 @@ buttons.forEach((btn) =>
     else if (event.target.innerText === "") 
     {
       let backSpace = inputVal.substring(0, inputVal.length - 1);
-      // console.log(backSpace);
       input.value = backSpace;
     } 
     
@@ -130,7 +142,6 @@ buttons.forEach((btn) =>
     {
       let toFe =+ input.value;
       input.value = toFe.toExponential();
-      // console.log("F-E Works..!!");
     }
 
     else if (event.target.innerText === "2n") 
@@ -177,10 +188,11 @@ buttons.forEach((btn) =>
       localStorage.setItem("inputVal", input.value);
     } 
     
-    else if (event.target.innerText === "x") {
+    else if (event.target.innerText === "x") 
+    {
       input.value += "*";
     } 
-    
+
     else if (event.target.innerText === "exp") 
     {
       input.value = Math.exp(input.value);
@@ -206,17 +218,20 @@ buttons.forEach((btn) =>
       input.value = input.value * π;
       input.value = Number(input.value + π);
     } 
+
     else if (event.target.innerText === "x2") 
     {
       input.value = Math.pow(input.value, 2);
     } 
+
     else if (event.target.innerText === "n!") 
     {
       input.value = factorial(input.value);
     } 
-    else if (event.target.innerText === "x") 
+
+    else if (event.target.innerText === "xy") 
     {
-      input.value = "^";
+      input.value += "^";
     } 
     
     else if (event.target.innerText === "1/x") 
@@ -253,10 +268,12 @@ buttons.forEach((btn) =>
     {
       plusMinusOperator(input.value);
     }
+
     else if (event.target.innerText === "Sin") 
     {
       input.value = "Sin ";
     } 
+
     else if (event.target.innerText === "Cos") 
     {
       input.value = "Cos ";
@@ -294,7 +311,6 @@ buttons.forEach((btn) =>
     
     else {
       input.value += event.target.innerText;
-      //alert('Enter a Valid Input')
     }
   })
 );
