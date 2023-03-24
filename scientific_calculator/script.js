@@ -8,7 +8,9 @@ const btn = document.getElementById("deg");
 btn.addEventListener("click", function () {
   if (btn.textContent === "DEG") {
     btn.textContent = "RAD";
-  } else {
+  } 
+  
+  else {
     btn.textContent = "DEG";
   }
 });
@@ -18,7 +20,8 @@ function btnDegToRad(inputVal, btn) {
   if (btn === "DEG") {
     let pi = Math.PI;
     input.value = inputVal * (180 / pi);
-  } else {
+  } 
+  else {
     let pi = Math.PI;
     input.value = inputVal * (pi / 180);
   }
@@ -26,11 +29,12 @@ function btnDegToRad(inputVal, btn) {
 
 // MOD & 10x Functionality
 function modOperator(num) {
-  if (num.includes("mod")) {
+  if (num.includes("mod")) 
+  {
     let split_mod = num.split("mod");
     input.value = Number(split_mod[0] % split_mod[1]);
-    console.log("split mod works..!", split_mod);
-  } else if (num.includes("10 x")) {
+  } 
+  else if (num.includes("10 x")) {
     let splitTen = num.split("*");
     let multiplication = 10;
     for (let i = 1; i < Number(splitTen[1]); i++) {
@@ -60,10 +64,6 @@ function trigno(type, num1) {
     case "Tan":
       input.value = Math.tan((`${num1}` * Math.PI) / 180.0);
       break;
-
-    default:
-      console.log("Trigonometry - Default");
-      break;
   }
 }
 
@@ -75,103 +75,226 @@ function plusMinusOperator(num) {
 // Button Click Event
 buttons.forEach((btn) =>
   btn.addEventListener("click", (event) => {
-    console.log(event.target.innerText);
+    // console.log(event.target.innerText);
     let inputVal = input.value;
 
     if (event.target.innerText === "=") {
-      console.log(input.value);
+      // console.log(input.value);
 
       // Trigonometry Function
-      if (input.value.includes("Sin")) {
+      if (input.value.includes("Sin")) 
+      {
         let trig = input.value;
         let trig__num = trig.split(" ");
         let numArray = trig__num[1];
         let type = trig__num[0];
         trigno(type, numArray);
-      } else if (input.value.includes("Cos")) {
+      } 
+      
+      else if (input.value.includes("Cos")) 
+      {
         let trig = input.value;
         let trig__num = trig.split(" ");
         let numArray = trig__num[1];
         let type = trig__num[0];
         trigno(type, numArray);
-      } else if (input.value.includes("Tan")) {
+      } 
+
+      else if (input.value.includes("Tan")) 
+      {
         let trig = input.value;
         let trig__num = trig.split(" ");
         let numArray = trig__num[1];
         let type = trig__num[0];
         trigno(type, numArray);
-      } else if (input.value.includes("mod")) {
+      } 
+
+      else if (input.value.includes("mod")) 
+      {
         modOperator(input.value);
-      } else {
+      } 
+      
+      else {
         input.value = eval(input.value);
       }
-    } else if (event.target.innerText === "") {
+    } 
+
+    else if (event.target.innerText === "") 
+    {
       let backSpace = inputVal.substring(0, inputVal.length - 1);
-      console.log(backSpace);
+      // console.log(backSpace);
       input.value = backSpace;
-    } else if (event.target.innerText === "MR") {
+    } 
+    
+    else if (event.target.innerText === "F-E") 
+    {
+      let toFe =+ input.value;
+      input.value = toFe.toExponential();
+      // console.log("F-E Works..!!");
+    }
+
+    else if (event.target.innerText === "2n") 
+    {
+      input.value = Math.pow(2, input.value);
+    } 
+    else if (event.target.innerText === "3n") 
+    {
+      input.value = Math.pow(3, input.value);
+    } 
+    
+    else if (event.target.innerText === "n3") 
+    {
+      input.value = Math.pow(input.value, 3);
+    } 
+    
+    else if (event.target.innerText === "∛x") 
+    {
+      input.value = Math.cbrt(input.value);
+    }
+    
+    else if (event.target.innerText === "MR") 
+    {
       input.value = localStorage.getItem("inputVal");
-    } else if (event.target.innerText === "MC") {
+    }
+    
+    else if (event.target.innerText === "MC") 
+    {
       input.value = localStorage.removeItem("inputVal");
-    } else if (event.target.innerText === "M+") {
-      input.value =
-        Number(localStorage.getItem("inputVal")) + Number(input.value);
-    } else if (event.target.innerText === "M-") {
+    } 
+    
+    else if (event.target.innerText === "M+") 
+    {
+      input.value = Number(localStorage.getItem("inputVal")) + Number(input.value);
+    } 
+    
+    else if (event.target.innerText === "M-")
+    {
       input.value = input.value - Number(localStorage.getItem("inputVal"));
-    } else if (event.target.innerText === "MS") {
+    } 
+    
+    else if (event.target.innerText === "MS") 
+    {
       localStorage.setItem("inputVal", input.value);
-    } else if (event.target.innerText === "x") {
+    } 
+    
+    else if (event.target.innerText === "x") {
       input.value += "*";
-    } else if (event.target.innerText === "exp") {
+    } 
+    
+    else if (event.target.innerText === "exp") 
+    {
       input.value = Math.exp(input.value);
-    } else if (event.target.innerText === "÷") {
+    } 
+    
+    else if (event.target.innerText === "÷") 
+    {
       input.value += "/";
-    } else if (event.target.innerText === "C") {
+    } 
+    
+    else if (event.target.innerText === "C") 
+    {
       input.value = "";
-    } else if (event.target.innerText === "e") {
+    }
+    else if (event.target.innerText === "e")
+    {
       input.value += "2.71 *";
-    } else if (event.target.innerText === "π") {
+    } 
+    
+    else if (event.target.innerText === "π") 
+    {
       π = 3.14;
       input.value = input.value * π;
       input.value = Number(input.value + π);
-    } else if (event.target.innerText === "x2") {
+    } 
+    else if (event.target.innerText === "x2") 
+    {
       input.value = Math.pow(input.value, 2);
-    } else if (event.target.innerText === "n!") {
+    } 
+    else if (event.target.innerText === "n!") 
+    {
       input.value = factorial(input.value);
-    } else if (event.target.innerText === "x") {
+    } 
+    else if (event.target.innerText === "x") 
+    {
       input.value = "^";
-    } else if (event.target.innerText === "1/x") {
+    } 
+    
+    else if (event.target.innerText === "1/x") 
+    {
       input.value = `1/`;
-    } else if (event.target.innerText === "|x|") {
+    } 
+    
+    else if (event.target.innerText === "|x|") 
+    {
       input.value = Math.abs(input.value);
-    } else if (event.target.innerText === "√") {
+    } 
+
+    else if (event.target.innerText === "√") 
+    {
       input.value = Math.sqrt(input.value);
-    } else if (event.target.innerText === "10 x") {
+    } 
+
+    else if (event.target.innerText === "10 x") 
+    {
       input.value = "10*";
-    } else if (event.target.innerText === "log") {
+    } 
+
+    else if (event.target.innerText === "log") 
+    {
       input.value = Math.log(input.value) / Math.LN10;
-    } else if (event.target.innerText === "ln") {
+    }
+     
+    else if (event.target.innerText === "ln") 
+    {
       input.value = Math.log(input.value);
-    } else if (event.target.innerText === "+/-") {
+    }
+
+    else if (event.target.innerText === "+/-") 
+    {
       plusMinusOperator(input.value);
-    } else if (event.target.innerText === "Sin") {
+    }
+    else if (event.target.innerText === "Sin") 
+    {
       input.value = "Sin ";
-    } else if (event.target.innerText === "Cos") {
+    } 
+    else if (event.target.innerText === "Cos") 
+    {
       input.value = "Cos ";
-    } else if (event.target.innerText === "Tan") {
+    } 
+
+    else if (event.target.innerText === "Tan") 
+    {
       input.value = "Tan ";
-    } else if (event.target.innerText === "Round") {
+    } 
+    
+    else if (event.target.innerText === "Round")
+    {
       input.value = Math.round(input.value);
-    } else if (event.target.innerText === "Ceil") {
+    } 
+
+    else if (event.target.innerText === "Ceil")
+    {
       input.value = Math.ceil(input.value);
-    } else if (event.target.innerText === "Floor") {
+    } 
+
+    else if (event.target.innerText === "Floor")
+    {
       input.value = Math.floor(input.value);
-    } else if (event.target.innerText === "DEG") {
+    } 
+
+    else if (event.target.innerText === "DEG") 
+    {
       btnDegToRad(input.value, "DEG");
-    } else if (event.target.innerText === "RAD") {
+    } 
+
+    else if (event.target.innerText === "RAD")
+    {
       btnDegToRad(input.value, "RAD");
-    } else {
+    } 
+    
+    else {
       input.value += event.target.innerText;
+      //alert('Enter a Valid Input')
     }
   })
 );

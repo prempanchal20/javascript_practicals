@@ -42,11 +42,19 @@
 .calculator_keys .rows button {
   padding: 10px;
   border: 0px;
-  width: 100px;
+  width: 195px;
   margin: 2px;
   height: 50px;
   background-color: #f7f7f7;
 }
+
+#deg {
+  width: 100px;
+}
+
+/* .trigonometry{
+  background-color: white;
+} */
 
 .keys {
   background-color: white !important;
@@ -55,34 +63,6 @@
 }
 .down-array {
   margin: 5px;
-}
-.trigno-func {
-  display: flex;
-  margin: 7px;
-}
-
-.dropdown {
-  position: relative;
-  display: flex;
-  align-items: center;
-  min-width: 150px;
-}
-
-.dropdown ul {
-  display: none;
-  position: absolute;
-  list-style: none;
-  top: 70%;
-  background-color: white;
-  width: 100px;
-  padding: 10px;
-  margin: 5px;
-}
-.trigno-func ul li {
-  padding: 5px;
-}
-.dropdown:hover ul {
-  display: block;
 }
 
 .rows {
@@ -97,6 +77,96 @@
   justify-content: flex-start;
 }
 
-.dropdown img {
-  height: 25px;
+.rows .square_fun {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trigonometry:hover ul {
+  display: block;
+  list-style-type: none;
+  width: 100%;
+  padding: 5px;
+  left: 1px;
+}
+
+.func:hover ul {
+  display: block;
+  list-style-type: none;
+  list-style-type: none;
+  width: 100%;
+  padding: 5px;
+  left: 5px;
+}
+
+.dropdown.menu li{
+  padding: 3px;
+}
+
+.dropdown.keys li{
+  padding: 3px;
+}
+
+.dropdown.func li{
+  padding: 3px;
+}
+
+.square_fun:hover ul {
+  display: block;
+  list-style-type: none;
+  list-style-type: none;
+  width: 100%;
+  padding: 5px;
+}
+
+.dropdown.menu {
+  position: absolute;
+  display: none;
+  top: 33px;
+  background-color: #f9f9f9;
+  min-width: 10px;
+  margin: 5px;
+  z-index: 1;
+}
+
+.dropdown.keys {
+  position: absolute;
+  list-style-type: none;
+  display: none;
+  top: 33px;
+  background-color: #f9f9f9;
+  min-width: 10px;
+  margin: 5px;
+  z-index: 1;
+}
+
+.dropdown.func {
+  position: absolute;
+  list-style-type: none;
+  display: none;
+  top: 33px;
+  background-color: #f9f9f9;
+  min-width: 10px;
+  padding: 10px;
+  margin: 5px;
+  padding: 5px;
+  z-index: 1;
+}
+
+.trigonometry {
+  display: flex;
+  position: relative;
+  background: none !important;
+}
+
+.func {
+  display: flex;
+  position: relative;
+  background: none !important;
+}
+
+.square_fun {
+  display: flex;
+  position: relative;
 }
