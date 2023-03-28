@@ -1,0 +1,125 @@
+/* Body */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  background-color: rgb(22, 22, 53);
+  height: 100px;
+  position: absolute;
+  width: 100%;
+  text-decoration: none;
+  position: fixed;
+  z-index: 10;
+}
+
+.navbar-brand i {
+  padding: 7px;
+}
+
+.navbar-brand img {
+  padding: 3px;
+}
+
+/* Main Section */
+
+.main_section {
+  position: relative;
+  display: flex;
+  top: 7px;
+  left: 30px;
+  width: 100vw;
+  height: 90vh;
+}
+
+.main_section_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.main_section img {
+  flex-direction: row !important;
+  justify-content: space-evenly;
+}
+
+.main_section_store {
+  flex-direction: row;
+}
+
+.main_section_images {
+  padding-top: 35px;
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  position: relative;
+}
+
+.main_section_images .ipad {
+  position: relative;
+}
+
+.main_section_images .mobile {
+  position: absolute;
+  left: 0px;
+}
+
+.main_section_images .side_screen {
+  position: absolute;
+}
+
+.main_section_images .phone_screen1 {
+  position: absolute;
+  left: 0px;
+  bottom: 93px;
+}
+
+/* Features */
+.features {
+  background-image: url(Images/background_image.webp);
+  color: white;
+  width: 100%;
+}
+
+/* Contact */
+table,
+tr,
+td {
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+td {
+  padding: 3px;
+}
+
+tbody td:after {
+  border-bottom: 1px solid white;
+  content: "";
+  width: 100%;
+  height: 1px;
+  display: block;
+  position: relative;
+  top: -4px;
+}
+
+td span {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  padding-right: 5px;
+  background: #fff;
+}
