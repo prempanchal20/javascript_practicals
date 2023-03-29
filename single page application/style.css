@@ -10,11 +10,9 @@
 .navbar {
   background-color: rgb(22, 22, 53);
   height: 100px;
-  /* position: absolute;
-  width: 100vw;
-  text-decoration: none;
+  z-index: 1;
   position: fixed;
-  z-index: 10;  */
+  width: 100vw;
 }
 
 .navbar-brand i {
@@ -29,11 +27,9 @@
 .main_section {
   position: relative;
   display: flex;
-  top: 7px;
-  left: 30px;
   width: 100vw;
   height: 90vh;
-  background-image: linear-gradient(#614385 → #516395);
+  background-image: linear-gradient(#20a4f3, #182b3a);
 }
 
 .main_section_content {
