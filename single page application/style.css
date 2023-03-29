@@ -93,7 +93,6 @@
 /* Features */
 .features {
   background-image: url(Images/background_image.webp);
-  /* background-repeat: no-repeat; */
   color: white;
   width: 100vw;
   padding: 100px;
@@ -115,8 +114,27 @@
 /* About */
 .about {
   margin: 50px;
-  height: 100vh;
+  height: 80vh;
+  width: 100vw;
+  padding: 40px;
+  font-weight: 400;
+  font-size: 120%;
+}
+
+.about_content {
+  width: 80vw;
   display: flex;
+  justify-content: space-between;
+  display: none;
+}
+
+.personalized_experience {
+  width: 50vw;
+  margin-top: 90px;
+}
+
+.slider {
+  cursor: pointer;
 }
 
 /* Contact */
@@ -204,12 +222,6 @@
   color: black;
 }
 
-/* About */
-
-.about {
-  height: 50vh;
-}
-
 /* Footer */
 
 .footer {
@@ -255,9 +267,3 @@
 .socialApps_icon i {
   padding: 10px;
 }
-
-/* Chatbot */
-
-/* .chatbot{
-  position: fixed;
-} */
