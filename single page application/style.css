@@ -1,0 +1,243 @@
+/* Body */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  background-color: rgb(22, 22, 53);
+  height: 100px;
+  /* position: absolute;
+  width: 100vw;
+  text-decoration: none;
+  position: fixed;
+  z-index: 10;  */
+}
+
+.navbar-brand i {
+  padding: 7px;
+}
+
+.navbar-brand img {
+  padding: 3px;
+}
+
+/* Main Section */
+.main_section {
+  position: relative;
+  display: flex;
+  top: 7px;
+  left: 30px;
+  width: 100vw;
+  height: 90vh;
+  background-image: linear-gradient(#614385 → #516395);
+}
+
+.main_section_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.main_section_store {
+  flex-direction: row;
+}
+
+.main_section_images {
+  padding-top: 35px;
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  position: relative;
+}
+
+.main_section_images .ipad {
+  position: relative;
+}
+
+.main_section_images .mobile {
+  position: absolute;
+  left: 0px;
+}
+
+.main_section_images .side_screen {
+  position: absolute;
+}
+
+.main_section_images .phone_screen1 {
+  position: absolute;
+  left: 0px;
+  bottom: 93px;
+}
+
+/* Features */
+.features {
+  background-image: url(Images/background_image.webp);
+  /* background-repeat: no-repeat; */
+  color: white;
+  width: 100vw;
+  padding: 100px;
+}
+
+.feature_text {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.feature_content {
+  display: flex;
+  margin-top: 90px;
+}
+
+/* Contact */
+.contact {
+  background-image: url(Images/background_image.webp);
+  width: 100vw;
+  height: 50vh;
+  color: white;
+  display: flex;
+}
+
+.contact_details {
+  margin: 40px;
+  width: 60%;
+  font-weight: 400;
+  font-size: 120%;
+}
+
+.contact_details .name {
+  display: flex;
+  padding: 10px;
+}
+
+.contact_details input {
+  display: block;
+}
+
+.contact_details label {
+  display: block;
+}
+
+.contact_details .email {
+  display: block;
+  padding: 10px;
+}
+
+.contact_details .message {
+  display: block;
+  padding: 10px;
+}
+
+.contact_details .message input {
+  padding-top: 60px;
+  width: 550px;
+}
+
+.contact_details .submit {
+  display: block;
+  padding: 10px;
+  justify-content: center;
+}
+
+.contact_details input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid white;
+  background-color: transparent;
+}
+
+.contact_header {
+  width: 50vw;
+  margin: 10px;
+  padding: 80px;
+}
+
+.contact #fname {
+  display: block;
+  margin-right: 30px;
+}
+
+.submit button {
+  color: white;
+  border: 1px solid white;
+  outline: white;
+  background-color: transparent;
+  padding: 10px;
+  margin: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+  border-radius: 10px;
+}
+
+.submit :hover {
+  background-color: white;
+  color: black;
+}
+
+/* About */
+
+.about {
+  height: 50vh;
+}
+
+/* Footer */
+
+.footer {
+  height: 30vh;
+  width: 100vw;
+  margin: 30px;
+  display: flex;
+  font-size: 20px;
+}
+
+.footer_left {
+  width: 50vw;
+}
+
+.address {
+  margin-left: 100px;
+}
+
+.copyright {
+  margin-top: 10px;
+}
+
+.phone {
+  width: 21vw;
+}
+.footer_right {
+  width: 50vw;
+  flex-direction: column;
+  padding: 10px;
+  margin-left: 40%;
+}
+
+.footer_right img {
+  margin-right: 10px;
+  margin: 10px;
+  width: 150px;
+}
+
+.phone_email {
+  display: flex;
+}
+
+.socialApps_icon i {
+  padding: 10px;
+}
+
+/* Chatbot */
+
+/* .chatbot{
+  position: fixed;
+} */
