@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -32,21 +33,20 @@
             <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="#">Features</a>
+            <a class="nav-link text-light" href="#features">Features</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="#">Services</a>
+            <a class="nav-link text-light" href="#services">Services</a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link disabled text-light">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled text-light">Contact</a>
+            <a class="nav-link text-light" href="#contact">Contact</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+
 
   <!-- Main Section -->
   <section class="main_section">
@@ -60,18 +60,17 @@
     </div>
 
     <div class="main_section_images">
-      <img src="Images/ipad_screen.png" class="ipad" alt="ipad_screen" width="462px" height="666px">
-      <img src="Images/phone_screen.png" class="mobile" alt="phone_screen" width="231px" height="501px">
-      <img src="Images/side_screen.png" class="side_screen" alt="side_screen" width="188px" height="119px">
-      <img src="Images/phone_screen1.png" class="phone_screen1" alt="phone_screen1" width="239px" height="55px">
+      <img src="Images/ipad mockup.webp" class="ipad" alt="ipad_screen" width="462px" height="666px">
+
 
       <!-- Chatbot Icon -->
       <i class="bi bi-chat-dots-fill"></i>
+
     </div>
   </section>
 
   <!-- Features Section -->
-  <section class="features">
+  <section class="features" id="features">
     <div class="feature_text">
       <h3>Features</h3>
       <p>I'm a title. Click here to add your own text and edit me.</p>
@@ -105,17 +104,14 @@
   </section>
 
   <!-- About Section -->
-  <section class="about">
-    <div class="about_title">
-      <h3>How The App Works</h3>
-    </div>
+  <section class="about" id="services">
 
-    <div class="slider">
-      <i class=" bi bi-chevron-left"></i>
-      <i class=" bi bi-chevron-right"></i>
-    </div>
+    <!-- <div class="slider">
+      <i class="left_arrow bi bi-chevron-left"></i>
+      <i class="right_arrow bi bi-chevron-right"></i>
+    </div> -->
 
-    <div class="about_content">
+    <!-- <div class="about_content">
       <div class="personalized_experience">
         <p>1. Personalized Experience</p>
         <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double
@@ -126,7 +122,7 @@
         <img src="Images/phone_screen.png" alt="phone screen" width="260px" height="563px">
       </div>
 
-      <!-- <div class="cloud_technology">
+      <div class="cloud_technology">
         <p>2. Cloud Based Technology</p>
         <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double
           click me to add your own content and make changes to the font.</p>
@@ -144,12 +140,33 @@
 
       <div class="screen_image">
         <img src="Images/feature1.png" alt="phone screen" width="260px" height="563px">
-      </div> -->
+      </div>
+    </div> -->
+
+    <div class="about_title">
+      <h3>How The App Works</h3>
+    </div>
+
+    <div class="carousel">
+      <div class="carousel-item carousel-item-visible">
+        <img src="Images/phone_screen.png" alt="Phone Screen" />
+      </div>
+      <div class="carousel-item">
+        <img src="Images/phone_screen.png" alt="Feature1" />
+      </div>
+      <div class="carousel-item">
+        <img src="Images/phone_screen.png" alt="Ipad Screen" />
+      </div>
+      <div class="carousel-actions">
+        <button id="carousel-button-prev" aria-label="Previous">
+          < </button>
+            <button id="carousel-button-next" aria-label="Next">></button>
+      </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section class="contact">
+  <section class="contact" id="contact">
     <div class="contact_header">
       <h3>For any Assistance Required Please Reach Out</h3>
     </div>
@@ -221,6 +238,9 @@
   </section>
 
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

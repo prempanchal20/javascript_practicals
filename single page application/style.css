@@ -9,7 +9,7 @@
 /* Navbar */
 .navbar {
   background-color: rgb(22, 22, 53);
-  height: 100px;
+  height: 10vh;
   z-index: 1;
   position: fixed;
   width: 100vw;
@@ -23,8 +23,8 @@
   padding: 3px;
 }
 
-.navbar nav {
-  font-weight: 1000;
+.nav-item a:hover {
+  color: cyan !important;
 }
 
 /* Main Section */
@@ -32,7 +32,7 @@
   position: relative;
   display: flex;
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   color: white;
   background-image: linear-gradient(#20a4f3, #182b3a);
 }
@@ -71,23 +71,9 @@
   position: relative;
 }
 
-.main_section_images .ipad {
-  position: relative;
-}
-
-.main_section_images .mobile {
-  position: absolute;
-  left: 0px;
-}
-
-.main_section_images .side_screen {
-  position: absolute;
-}
-
-.main_section_images .phone_screen1 {
-  position: absolute;
-  left: 0px;
-  bottom: 93px;
+.main_section_images img {
+  border: 5px solid black;
+  border-radius: 50px;
 }
 
 /* Features */
@@ -117,24 +103,74 @@
   height: 80vh;
   width: 100vw;
   padding: 40px;
-  font-weight: 400;
   font-size: 120%;
+  position: relative;
 }
 
-.about_content {
-  width: 80vw;
-  display: flex;
-  justify-content: space-between;
+.carousel {
+  max-width: 600px;
+  margin: 0 auto;
+  height: 80vh;
+  top: 100px;
+  position: absolute;
+  right: 570px;
+}
+
+.carousel .carousel-item,
+.carousel .carousel-item-hidden {
   display: none;
 }
 
-.personalized_experience {
-  width: 50vw;
-  margin-top: 90px;
+.carousel .carousel-item-visible {
+  display: block;
+  animation: fadeVisibility 0.5s;
 }
 
-.slider {
+.carousel .carousel-item img {
+  height: auto;
+  border: 5px solid black;
+  border-radius: 50px;
+}
+
+.carousel .carousel-actions {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel .carousel-actions button {
+  border-radius: 50px;
+  background-color: white;
+  border: 0;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.carousel .carousel-actions button#carousel-button-prev {
+  margin-left: 20px;
+  position: absolute;
+  right: 400px;
+}
+
+.carousel .carousel-actions button#carousel-button-next {
+  margin-right: 20px;
+  position: absolute;
+  left: 400px;
+}
+
+@keyframes fadeVisibility {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Contact */
@@ -266,4 +302,12 @@
 
 .socialApps_icon i {
   padding: 10px;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 600px) and (min-width: 400px) {
+  .phone {
+    width: 36vw;
+  }
 }
