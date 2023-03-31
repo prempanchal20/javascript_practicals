@@ -76,6 +76,10 @@
   border-radius: 50px;
 }
 
+.icons{
+  scroll-behavior: smooth;
+}
+
 /* Animation Effect */
 
 .main_section_store {
