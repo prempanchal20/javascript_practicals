@@ -59,7 +59,7 @@
     </div>
 
     <div class="main_section_images" id="ipad">
-      <img src="Images/main1.png" class="ipad" alt="ipad_screen" height="600px">
+      <img src="Images/main1.png" class="ipad" alt="ipad_screen" height="auto">
 
       <div class="icons">
         <!-- Up Arrow Key Icon -->
@@ -73,14 +73,14 @@
   <!-- Features Section -->
   <section class="features" id="features">
     <div class="feature_text">
-      <h3>Features</h3>
+      <h3 class="features-title">Features</h3>
       <p>I'm a title. Click here to add your own text and edit me.</p>
     </div>
 
     <div class="feature_content">
       <div class="speed">
         <i class="bi bi-star-fill fa-2x" width="120px" height="120px"></i>
-        <h3>High Speed Performance</h3>
+        <h3 class="feature-sub-text">High Speed Performance</h3>
 
         <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double
           click
@@ -89,7 +89,7 @@
 
       <div class=support>
         <i class="bi bi-person-fill fa-2x"></i>
-        <h3>24/7 Online Support</h3>
+        <h3 class="feature-sub-text">24/7 Online Support</h3>
         <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double
           click
           me to add your own content and make changes to the font.</p>
@@ -97,7 +97,7 @@
 
       <div class="security">
         <i class="bi bi-lock-fill fa-2x"></i>
-        <h3>Airtight Security</h3>
+        <h3 class="feature-sub-text">Airtight Security</h3>
         <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double
           click me to add your own content and make changes to the font.</p>
       </div>
@@ -146,37 +146,40 @@
     <div class="contact_header">
       <h1>For any Assistance Required Please Reach Out</h1>
     </div>
-    <form action="">
-      <div class="contact_details">
-        <div class="name">
-          <div class="fname">
-            <label for="fname">First name *</label>
-            <input type="text" id="fname" name="fname">
+    <div class="contact_details">
+      <form action="">
+        <div class="">
+          <div class="name">
+            <div class="fname">
+              <label for="fname">First name *</label>
+              <input type="text" id="fname" name="fname" style="width:65%">
+            </div>
+
+            <div class="lname">
+              <label for="lname">Last name *</label>
+              <input type="text" id="lname" name="lname" style="width:65%">
+            </div>
+          </div>
+          <div class="email">
+            <label for="email">Email *</label>
+            <input type="email" id="fname" name="email">
           </div>
 
-          <div class="lname">
-            <label for="lname">Last name *</label>
-            <input type="text" id="lname" name="lname">
+          <div class="message">
+            <label for="message">Leave us a message: </label>
+            <input type="text" id="message" name="message">
           </div>
-        </div>
-        <div class="email">
-          <label for="email">Email *</label>
-          <input type="email" id="fname" name="email">
-        </div>
 
-        <div class="message">
-          <label for="message">Leave us a message: </label>
-          <input type="text" id="message" name="message">
-        </div>
+          <div class="submit">
+            <button type="submit">Submit</button>
+          </div>
+      </form>
+    </div>
 
-        <div class="submit">
-          <button type="submit">Submit</button>
-        </div>
-    </form>
   </section>
 
   <!-- Footer Section -->
-  <section class="footer">
+  <section class="footer-go">
     <div class="footer_left">
       <div class="icon">
         <p> <i class="bi bi-pie-chart-fill text-dark m-2"></i>Go On</p>
@@ -184,12 +187,12 @@
 
       <div class="phone_email">
         <div class="phone">
-          <p class="telephone">Tel: 123-456-7890</p>
-          <p class="email"> Email: info@mysite.com</p>
+          <div class="telephone">Tel: 123-456-7890</div>
+          <div class="email"> Email: info@mysite.com</div>
         </div>
 
         <div class="address">
-          <p>500 Terry Francine Street San Francisco, CA 94158</p>
+          <div>500 Terry Francine Street San Francisco, CA 94158</div>
         </div>
       </div>
 
