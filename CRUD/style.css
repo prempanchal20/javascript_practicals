@@ -1,0 +1,59 @@
+/* Universal CSS*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar*/
+.navbar {
+  background-color: #212529 !important;
+  color: white !important;
+}
+
+.nav-item {
+  margin: 0px 10px;
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 25px;
+  padding-left: 10px;
+}
+
+.nav-link {
+  color: white;
+  font-weight: 100;
+}
+
+.nav-link:hover {
+  color: rgba(110, 206, 206, 0.658);
+}
+
+/*Main Section*/
+.main_section {
+  display: grid;
+  justify-content: center;
+}
+
+/* Card */
+.card {
+  border: none;
+  outline: none;
+}
+
+/* Footer */
+.footer {
+  background-color: #212529;
+  color: white;
+  font-weight: 100;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col:hover {
+  color: rgba(110, 206, 206, 0.658);
+}
