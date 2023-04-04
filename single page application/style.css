@@ -34,7 +34,6 @@
 .main_section {
   position: relative;
   display: flex;
-  height: 100vh;
   color: white;
   background-image: linear-gradient(#20a4f3, #182b3a);
 }
@@ -83,6 +82,7 @@
 
 .icons {
   scroll-behavior: smooth;
+  z-index: 1000;
 }
 
 .icon p {
@@ -118,11 +118,11 @@
 
 /* Features */
 .features {
-  background-image: url(Images/background_image.webp);
+  /* background-image: url(Images/background_image.webp); */
+  background-image: linear-gradient(#141e30, #2980b9);
   color: white;
   padding: 100px;
   background-repeat: no-repeat;
-  height: 70vh;
   background-size: cover;
 }
 
@@ -132,11 +132,10 @@
 }
 
 .feature_text {
+  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin-left: 5%;
   justify-content: space-between;
-  margin-left: 180px;
 }
 
 .feature_content {
@@ -187,7 +186,6 @@
 .carousel {
   max-width: 600px;
   margin: 0 auto;
-  height: 80vh;
   top: 100px;
   position: absolute;
   right: 200px;
@@ -209,10 +207,6 @@
   border-radius: 30px;
 }
 
-#image-3 img {
-  height: 422px;
-}
-
 .carousel .carousel-actions {
   display: flex;
   justify-content: space-between;
@@ -228,7 +222,6 @@
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  height: 40px;
 }
 
 .carousel .carousel-actions button#carousel-button-prev {
@@ -255,11 +248,11 @@
 /* Contact */
 .contact {
   background-image: url(Images/background_image.webp);
-  height: 55vh;
   color: white;
   display: flex;
   padding: 45px;
   background-repeat: no-repeat;
+  height: 100vh;
 }
 
 .contact_details {
@@ -431,7 +424,6 @@
   .contact {
     flex-direction: column;
     background-repeat: no-repeat;
-    height: 75vh;
   }
 
   .contact_header {
@@ -496,7 +488,6 @@
   .contact {
     flex-direction: column;
     background-repeat: no-repeat;
-    height: 65vh;
   }
 
   .contact_header {
@@ -580,7 +571,6 @@
   .contact {
     flex-direction: column;
     background-repeat: no-repeat;
-    height: 75vh;
   }
 
   .contact_header {
@@ -626,7 +616,6 @@
   .main_section {
     display: block;
     top: 56px;
-    height: 100vh;
     position: relative;
   }
 
@@ -651,7 +640,6 @@
     padding: 25px;
     position: relative;
     top: 10px;
-    height: 100vh;
   }
 
   .feature_text {
@@ -675,7 +663,6 @@
   .about {
     margin-left: 0px;
     padding: 30px;
-    height: 100vh;
   }
 
   .about_text {
@@ -699,7 +686,6 @@
   .contact {
     flex-direction: column;
     background-repeat: no-repeat;
-    height: 75vh;
     padding: 25px;
   }
 
