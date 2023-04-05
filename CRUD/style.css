@@ -42,8 +42,15 @@
   outline: none;
 }
 
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3%;
+}
 /* Footer */
-.footer {
+.footer-go {
   background-color: #212529;
   color: white;
   font-weight: 100;
