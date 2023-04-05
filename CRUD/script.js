@@ -1,9 +1,15 @@
 let submitBtn = document.getElementById("submit");
+let input = document.getElementsByTagName("input");
 let productID = document.getElementById("productID");
 let productName = document.getElementById("productName");
 let productImage = document.getElementById("productImage");
 let productPrice = document.getElementById("productPrice");
 let productDescription = document.getElementById("productDescription");
+
+//Global State for Data
+let a = JSON.parse(localStorage.getItem("data")) || [];
+
+
 
 // Submit Button Event
 submitBtn.addEventListener("click", (event) => {
@@ -24,17 +30,18 @@ submitBtn.addEventListener("click", (event) => {
     productDescription: productDescriptionValue,
   };
 
-  // console.log("keyValue is:- ", keyValue);
-  // console.log(Object.keys(keyValue));
-  // console.log(Object.values(keyValue));
+  a.push(keyValue);
+  
+  localStorage.setItem("data", JSON.stringify(a));
+  // Clear The Data After Form Submit
+  productID.value = "";
+  productName.value = "";
+  productImage.value = "";
+  productID.value = "";
+  productPrice.value = "";
+  productDescription.value = "";
 
-  //Store Values In Localstorage
-  let data = [];
-  data.push({
-    productID: productIDValue,
-    productName: productNameValue,
-    productImage: productImageValue,
-  });
-  localStorage.setItem("data", JSON.stringify(data));
-  console.log(data);
+  // Add Products in DOM
+
+  // Display Data on DOM
 });
