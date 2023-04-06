@@ -15,7 +15,7 @@ setDataToLocalStorage.forEach((element) => {
     ${element.productDescription}
     </p>
     <button class="btn btn-primary" type="submit">Add Product</button>
-    <button class="btn btn-danger" type="submit">
+    <button class="btn btn-danger" type="submit" data-custom=${element.productID} onclick="removeProduct(this)">
       Remove Product
     </button>
   </div>
@@ -30,3 +30,15 @@ let getDataToLocalStorage = () => {
   location.replace("product.html");
   return getLSData;
 };
+
+// Delete Data From LocalStorage
+function removeProduct(e) {
+  console.log(e);
+  const pID = e.getAttribute("data-custom");
+  console.log(pID);
+  const updatedData = setDataToLocalStorage.filter((element) => {
+    return element.productID != pID;
+  });
+  console.log(updatedData);
+  localStorage.setItem("localStorageData", JSON.stringify(updatedData));
+}
