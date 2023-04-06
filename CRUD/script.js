@@ -7,12 +7,15 @@ let productPrice = document.getElementById("productPrice");
 let productDescription = document.getElementById("productDescription");
 
 //Global State for Local Storage Data
-let setDataToLocalStorage = JSON.parse(localStorage.getItem("data")) || [];
+let setDataToLocalStorage =
+  JSON.parse(localStorage.getItem("localStorageData")) || [];
 console.log(setDataToLocalStorage);
 
 // Submit Button Event
 submitBtn.addEventListener("click", (event) => {
   event.preventDefault(); // Hold the Page after Submit button clicked
+
+  location.replace("product.html");
 
   // Get values from Input
   let productIDValue = productID.value;
@@ -29,9 +32,13 @@ submitBtn.addEventListener("click", (event) => {
     productDescription: productDescriptionValue,
   };
 
+  // Push Data on Local Storage in Form of Key-Value Pair
   setDataToLocalStorage.push(keyValue);
 
-  localStorage.setItem("data", JSON.stringify(setDataToLocalStorage));
+  localStorage.setItem(
+    "localStorageData",
+    JSON.stringify(setDataToLocalStorage)
+  );
 
   // Clear The Data After Form Submit
   productID.value = "";
@@ -40,9 +47,4 @@ submitBtn.addEventListener("click", (event) => {
   productID.value = "";
   productPrice.value = "";
   productDescription.value = "";
-
-  // Add Products in DOM
-
-  // Display Data on DOM
 });
-
