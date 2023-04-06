@@ -133,13 +133,16 @@
   flex-direction: column;
   margin-left: 14%;
 }
+
 .features-title {
   font-size: 48px;
 }
+
 .feature-sub-text {
   padding-top: 6%;
   width: 70%;
 }
+
 .feature_content {
   display: flex;
   margin-top: 4%;
@@ -178,10 +181,18 @@
   padding: 100px;
 }
 
+.about_content {
+  width: 50%;
+}
+
 .about_text {
   margin-top: 50px;
-  width: 25vw;
+  width: 100%;
   font-weight: 300;
+}
+
+.about_title h3 {
+  font-size: 48px;
 }
 
 .carousel {
@@ -261,7 +272,7 @@
 }
 
 .contact_details {
-  width: 40%;
+  width: 37%;
   font-weight: 400;
   font-size: 120%;
   font-weight: 100;
@@ -321,7 +332,7 @@
 
 .contact_header h1 {
   font-weight: initial;
-  width: 60%;
+  width: 63%;
 }
 
 .contact #fname {
@@ -358,6 +369,10 @@
   width: 50%;
 }
 
+.icon i {
+  margin-right: 5px;
+}
+
 .address {
   margin-left: 5%;
   width: 42%;
@@ -373,6 +388,7 @@
   display: flex;
   justify-content: flex-end;
 }
+
 .footer_right {
   width: 50%;
   display: flex;
@@ -395,9 +411,11 @@
 .telephone {
   line-height: 50px;
 }
+
 .socialApps_icon {
   margin-top: 2%;
 }
+
 .socialApps_icon i {
   padding: 10px 20px 10px 0;
 }
@@ -555,6 +573,7 @@
   .footer_left {
     width: 96vw;
   }
+
   .phone {
     width: 39vw;
   }
@@ -575,7 +594,6 @@
   .main_section {
     display: block;
     top: 56px;
-
     position: relative;
   }
 
@@ -592,7 +610,8 @@
   }
 
   .main_section_images img {
-    width: 100vw;
+    width: 100%;
+    height: auto;
   }
 
   /* Features */
@@ -600,6 +619,7 @@
     padding: 25px;
     position: relative;
     top: 10px;
+    margin-top: 10%;
   }
 
   .feature_text {
@@ -629,16 +649,25 @@
     width: 80vw;
   }
 
+  .about_title h3 {
+    font-size: 33px;
+  }
+
   .carousel {
     width: 7vw;
     display: flex;
     flex-direction: column;
+    right: 10%;
   }
 
   /*Service*/
   .carousel {
     position: relative;
     top: 0px;
+  }
+
+  .carousel .carousel-actions {
+    bottom: 10%;
   }
 
   /* Contact */
@@ -649,12 +678,23 @@
 
   .contact_header {
     padding: 0px;
-    width: 86vw;
+    width: 100%;
+  }
+
+  .contact_header h1 {
+    width: 100%;
   }
 
   .contact_details {
-    margin: 0px;
-    width: 96vw;
+    width: 100%;
+  }
+
+  .contact_details .email input {
+    width: 100%;
+  }
+
+  .contact_details .message input {
+    width: 100%;
   }
 
   .contact_details .lname {
@@ -672,22 +712,41 @@
   }
 
   /* Footer */
-  .footer {
-    margin: 20px;
+
+  .footer-go {
+    margin: 4% 5%;
+    display: block;
+    font-size: 20px;
+    font-weight: 100;
   }
 
-  .phone_email {
+  .store {
     display: flex;
-    flex-direction: column;
+  }
+
+  .store img {
+    margin: 0px;
+    margin-top: 15px;
+  }
+  .phone_email {
+    display: block;
   }
 
   .phone .email {
-    width: 35vw;
+    width: 55vw;
+  }
+
+  .footer_right {
+    padding: 0px;
   }
 
   .address {
     margin-left: 2px;
     width: 100%;
     margin-top: 20px;
+  }
+
+  .store {
+    display: block;
   }
 }
