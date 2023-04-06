@@ -6,10 +6,9 @@ let productImage = document.getElementById("productImage");
 let productPrice = document.getElementById("productPrice");
 let productDescription = document.getElementById("productDescription");
 
-//Global State for Data
-let a = JSON.parse(localStorage.getItem("data")) || [];
-
-
+//Global State for Local Storage Data
+let setDataToLocalStorage = JSON.parse(localStorage.getItem("data")) || [];
+console.log(setDataToLocalStorage);
 
 // Submit Button Event
 submitBtn.addEventListener("click", (event) => {
@@ -30,9 +29,10 @@ submitBtn.addEventListener("click", (event) => {
     productDescription: productDescriptionValue,
   };
 
-  a.push(keyValue);
-  
-  localStorage.setItem("data", JSON.stringify(a));
+  setDataToLocalStorage.push(keyValue);
+
+  localStorage.setItem("data", JSON.stringify(setDataToLocalStorage));
+
   // Clear The Data After Form Submit
   productID.value = "";
   productName.value = "";
@@ -45,3 +45,4 @@ submitBtn.addEventListener("click", (event) => {
 
   // Display Data on DOM
 });
+
