@@ -30,10 +30,14 @@
   color: rgba(110, 206, 206, 0.658);
 }
 
-/*Main Section*/
+/* Main Section */
 .main_section {
   display: grid;
   justify-content: center;
+}
+
+.form-control {
+  border: 1px solid rgba(0, 0, 0, 0.475);
 }
 
 /* Card */

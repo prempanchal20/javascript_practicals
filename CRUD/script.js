@@ -6,7 +6,7 @@ let productImage = document.getElementById("productImage");
 let productPrice = document.getElementById("productPrice");
 let productDescription = document.getElementById("productDescription");
 
-//Global State for Local Storage Data
+// Global State for Local Storage Data
 let setDataToLocalStorage =
   JSON.parse(localStorage.getItem("localStorageData")) || [];
 
@@ -42,7 +42,6 @@ submitBtn.addEventListener("click", (event) => {
   productID.value = "";
   productName.value = "";
   productImage.value = "";
-  productID.value = "";
   productPrice.value = "";
   productDescription.value = "";
 });
