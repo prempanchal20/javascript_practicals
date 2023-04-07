@@ -376,6 +376,7 @@
 .address {
   margin-left: 5%;
   width: 42%;
+  margin-top: 10px;
 }
 
 .copyright {
@@ -422,6 +423,7 @@
 
 /* Media Queries */
 @media (min-width: 950px) and (max-width: 1288px) {
+
   /* Navbar */
   .navbar-nav {
     padding-left: 15px;
@@ -491,6 +493,7 @@
 }
 
 @media (min-width: 751px) and (max-width: 950px) {
+
   /* Navbar  */
   .navbar-nav {
     padding-left: 15px;
@@ -585,6 +588,7 @@
 }
 
 @media (min-width: 375px) and (max-width: 751px) {
+
   /* Navbar */
   .navbar-nav {
     padding-left: 15px;
@@ -627,9 +631,14 @@
     top: 30px;
   }
 
+  .feature-sub-text {
+    width: 40%;
+  }
+
   .feature_content {
     top: 50px;
     flex-direction: column;
+    margin-left: 10px;
   }
 
   .speed,
@@ -687,6 +696,25 @@
 
   .contact_details {
     width: 100%;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+
+
+  .contact_details .name {
+    padding: 10px 0px;
+  }
+
+  .contact_details .email {
+    padding: 10px 0px;
+  }
+
+  .contact_details .message {
+    padding: 10px 0px;
+  }
+
+  .contact_details .submit {
+    padding: 10px 4px;
   }
 
   .contact_details .email input {
@@ -716,8 +744,17 @@
   .footer-go {
     margin: 4% 5%;
     display: block;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 100;
+  }
+
+  .features-text p {
+    font-weight: lighter;
+    font-size: 20px;
+  }
+
+  .icon {
+    font-size: 20px;
   }
 
   .store {
@@ -728,25 +765,38 @@
     margin: 0px;
     margin-top: 15px;
   }
+
   .phone_email {
     display: block;
+    margin-top: 0px;
   }
 
   .phone .email {
     width: 55vw;
   }
 
+  .footer_left {
+    width: 100%;
+  }
+
   .footer_right {
     padding: 0px;
+    width: 100%;
   }
 
   .address {
     margin-left: 2px;
-    width: 100%;
+    width: 70%;
     margin-top: 20px;
   }
 
   .store {
-    display: block;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .copyright {
+    width: 61%;
+    margin-top: 15px;
   }
 }
