@@ -9,7 +9,6 @@ let productDescription = document.getElementById("productDescription");
 //Global State for Local Storage Data
 let setDataToLocalStorage =
   JSON.parse(localStorage.getItem("localStorageData")) || [];
-console.log(setDataToLocalStorage);
 
 // Submit Button Event
 submitBtn.addEventListener("click", (event) => {
@@ -34,7 +33,6 @@ submitBtn.addEventListener("click", (event) => {
 
   // Push Data on Local Storage in Form of Key-Value Pair
   setDataToLocalStorage.push(keyValue);
-
   localStorage.setItem(
     "localStorageData",
     JSON.stringify(setDataToLocalStorage)
