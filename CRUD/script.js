@@ -6,6 +6,7 @@ let productImage = document.getElementById("productImage");
 let productPrice = document.getElementById("productPrice");
 let productDescription = document.getElementById("productDescription");
 
+
 // Global State for Local Storage Data
 let setDataToLocalStorage =
   JSON.parse(localStorage.getItem("localStorageData")) || [];
@@ -13,8 +14,9 @@ let setDataToLocalStorage =
 // Submit Button Event
 submitBtn.addEventListener("click", (event) => {
   event.preventDefault(); // Hold the Page after Submit button clicked
-
+  alert("Product Added Sucessfully..!!")
   location.replace("product.html");
+
 
   // Get values from Input
   let productIDValue = productID.value;
