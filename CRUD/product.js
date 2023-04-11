@@ -149,20 +149,21 @@ sort_By.addEventListener("click", (event) => {
 let searchProducts = document.querySelector(".search-prod");
 searchProducts.addEventListener("input", (e) => {
   const val = e.target.value;
+
+  let searchProducts = [];
   console.log(val);
 
-  for (i = 0; i < getProduct.length; i++) {
+  for (i = 0; i < setDataToLocalStorage.length; i++) {
     // console.log(getProduct[i].productName.toLowerCase().includes(search.toLowerCase()));
     if (
-      getProduct[i].productName.toLowerCase().includes(search.toLowerCase())
+      setDataToLocalStorage[i].productName
+        .toLowerCase()
+        .includes(val.toLowerCase())
     ) {
-      searchProduct.push(getProduct[i]);
+      searchProducts.push(setDataToLocalStorage[i]);
     }
   }
-  productItemDiv.innerHTML = "";
-  for (let index = 0; index < searchProduct.length; index++) {
-    addProduct(searchProduct[index]);
-  }
+  loadDOM(searchProducts);
 });
 
 // Empty LocalStorage
