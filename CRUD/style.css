@@ -21,19 +21,22 @@
   padding-left: 10px;
 }
 
+.navbar-brand:hover {
+  color: #14a44d;
+}
 .nav-link {
   color: white;
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .nav-link:hover {
-  color: rgba(110, 206, 206, 0.658);
+  color: #14a44d;
 }
 
 /* Main Section */
 .main_section {
   display: grid;
-  justify-content: center;
+  place-items: center;
 }
 
 /* Empty Cart*/
@@ -49,7 +52,7 @@
 }
 
 .empty_cart_text:hover {
-  color: #2ba2fe;
+  color: #14a44d;
 }
 
 .empty_cart_image a {
@@ -59,11 +62,9 @@
   margin-top: 2%;
 }
 
-
 /* Card */
 .card {
-  border: none;
-  outline: none;
+  border: solid 1px #14a44d;
 }
 
 /* Sort and Filter */
@@ -106,14 +107,14 @@
   padding-left: 5px;
   background-color: #212529;
   color: white;
+  display: list-item;
 }
 
 /* Footer */
 .footer {
   background-color: #212529;
   color: white;
-  font-weight: 100;
-  width: 100%;
+  font-weight: 400;
 }
 
 .row {
@@ -126,5 +127,5 @@
 }
 
 .col:hover {
-  color: rgba(110, 206, 206, 0.658);
+  color: #14a44d;
 }

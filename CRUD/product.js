@@ -5,6 +5,7 @@ let productImage_modal = document.querySelector("#productImage_modal");
 let productDescription_modal = document.querySelector(
   "#productDescription_modal"
 );
+
 let addEditProduct = document.querySelector(".addEditProduct");
 
 // Global State for Local Storage Data
@@ -19,24 +20,28 @@ let pdesc_modal = document.getElementById("productDescription_modal");
 
 // Add Product Functionality
 const cardContainer = document.querySelector(".card-container");
-cardContainer.innerHTML = "";
-setDataToLocalStorage.forEach((element) => {
-  cardContainer.innerHTML += `<div class="col-12 col-md-6 col-lg-4">
-<div class="card" id="${element.productID}">
-  <img src="${element.productImage}" class="card-img-top" alt="Image" />
-  <div class="card-body">
-    <h5 class="card-title">${element.productName}</h5>
-    <p class="card-text">
-    ${element.productDescription}
-    </p>
-    <button class="btn btn-primary" type="submit" data-custom=${element.productID} onclick="updateData('${element.productID}')" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Edit</button>
-    <button class="btn btn-danger" type="submit" data-custom=${element.productID} onclick="removeProduct(this)">
-      Remove Product
-    </button>
+function loadDOM(setDataToLocalStorage) {
+  cardContainer.innerHTML = "";
+  setDataToLocalStorage.forEach((element) => {
+    cardContainer.innerHTML += `<div class="col-12 col-md-6 col-lg-4">
+  <div class="card" id="${element.productID}">
+    <img src="${element.productImage}" class="card-img-top" alt="Image" />
+    <div class="card-body">
+      <h5 class="card-title">${element.productName}</h5>
+      <p class="card-text">
+      ${element.productDescription}
+      </p>
+      <button class="btn btn-primary" type="submit" data-custom=${element.productID} onclick="updateData('${element.productID}')" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Edit</button>
+      <button class="btn btn-danger" type="submit" data-custom=${element.productID} onclick="removeProduct(this)">
+        Remove Product
+      </button>
+    </div>
   </div>
-</div>
-</div>`;
-});
+  </div>`;
+  });
+}
+
+loadDOM(setDataToLocalStorage);
 
 // Update Data Functionality
 function updateData(pID) {
@@ -60,7 +65,6 @@ function updateData(pID) {
       editImage = reader.result;
     });
   });
-  console.log(productImage_modal);
 
   addEditProduct.addEventListener("click", () => {
     updatedData.productName = productName_modal.value;
@@ -91,8 +95,88 @@ function removeProduct(e) {
   localStorage.setItem("localStorageData", JSON.stringify(updatedData));
 }
 
-// Sort and Filter
+// Filter Functionality
+let sort_By = document.getElementById("sortBy");
+sort_By.addEventListener("click", (event) => {
+  sort_By = `${event.target.value}`;
+
+  // Sort by Product ID
+  if (sort_By === "productId") {
+    setDataToLocalStorage.sort((a, b) => {
+      return a.productID - b.productID;
+    });
+    loadDOM(setDataToLocalStorage);
+  }
+
+  // Sort by Product Price
+  else if (sort_By === "productPrice") {
+    setDataToLocalStorage.sort((a, b) => {
+      return a.productPrice - b.productPrice;
+    });
+    loadDOM(setDataToLocalStorage);
+  }
+
+  // Sort By Product Name
+  else if (sort_By === "productName") {
+    setDataToLocalStorage.sort(function (a, b) {
+      if (a.productName < b.productName) {
+        return -1;
+      }
+      if (a.productName > b.productName) {
+        return 1;
+      }
+      return 0;
+    });
+    loadDOM(setDataToLocalStorage);
+  }
+  // Sorting according to ASC and DESC
+  let arrowBtn = document.querySelector(".arrow");
+  arrowBtn.addEventListener("click", (event) => {
+    if (event.target.value === "ascending") {
+      // Sort numbers in ascending order
+      setDataToLocalStorage.sort((a, b) => a[sort_By] - b[sort_By]);
+
+      loadDOM(setDataToLocalStorage);
+    } else {
+      // Sort numbers in descending order
+      setDataToLocalStorage.sort((a, b) => b[sort_By] - a[sort_By]);
+      loadDOM(setDataToLocalStorage);
+    }
+  });
+});
+
+// Search Functionality
+let searchProducts = document.querySelector(".search-prod");
+searchProducts.addEventListener("input", (e) => {
+  const val = e.target.value;
+  console.log(val);
+
+  for (i = 0; i < getProduct.length; i++) {
+    // console.log(getProduct[i].productName.toLowerCase().includes(search.toLowerCase()));
+    if (
+      getProduct[i].productName.toLowerCase().includes(search.toLowerCase())
+    ) {
+      searchProduct.push(getProduct[i]);
+    }
+  }
+  productItemDiv.innerHTML = "";
+  for (let index = 0; index < searchProduct.length; index++) {
+    addProduct(searchProduct[index]);
+  }
+});
+
+// Empty LocalStorage
+// let length = setDataToLocalStorage.length;
+// console.log(typeof setDataToLocalStorage);
+// console.log(length);
+
+// if (length == 0) {
+//   location.replace("empty_cart.html");
+// } else {
+//   location.replace("product.html");
+// }
+
 // Empty Cart - Image Show
 // Same ID Not Allow
-// Alert Box before delete and edit
+// Alert Box
 // CSS Media Query
