@@ -1,4 +1,3 @@
-let submitBtn = document.getElementById("submit");
 let input = document.getElementsByTagName("input");
 let productID = document.getElementById("productID");
 let productName = document.getElementById("productName");
@@ -22,9 +21,10 @@ productImage.addEventListener("change", (event) => {
 });
 
 // Submit Button Event
-submitBtn.addEventListener("click", (event) => {
+const submitBtn = async (event) => {
   event.preventDefault(); // Hold the Page after Submit button clicked
-  alert("Product Added Sucessfully..!!");
+
+  await swal("", "Product Added Sucessfully..!!", "success");
   location.replace("product.html");
 
   // Get values from Input
@@ -55,4 +55,7 @@ submitBtn.addEventListener("click", (event) => {
   productImage.value = "";
   productPrice.value = "";
   productDescription.value = "";
-});
+};
+
+const productForm = document.getElementById("productForm");
+productForm.addEventListener("submit", submitBtn);

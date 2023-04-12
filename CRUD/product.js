@@ -5,7 +5,6 @@ let productImage_modal = document.querySelector("#productImage_modal");
 let productDescription_modal = document.querySelector(
   "#productDescription_modal"
 );
-
 let addEditProduct = document.querySelector(".addEditProduct");
 
 // Global State for Local Storage Data
@@ -18,27 +17,55 @@ let pprice_modal = document.getElementById("productPrice_modal");
 let pimage_modal = document.getElementById("productImage_modal");
 let pdesc_modal = document.getElementById("productDescription_modal");
 
+// Truncate Product Description
+function truncateString(productDescription, num) {
+  console.log(productDescription);
+  if (productDescription.length <= num) {
+    return productDescription;
+  }
+  return productDescription.slice(0, num) + "...";
+}
+
 // Add Product Functionality
 const cardContainer = document.querySelector(".card-container");
 function loadDOM(setDataToLocalStorage) {
   cardContainer.innerHTML = "";
-  setDataToLocalStorage.forEach((element) => {
-    cardContainer.innerHTML += `<div class="col-12 col-md-6 col-lg-4">
-  <div class="card" id="${element.productID}">
-    <img src="${element.productImage}" class="card-img-top" alt="Image" />
-    <div class="card-body">
-      <h5 class="card-title">${element.productName}</h5>
-      <p class="card-text">
-      ${element.productDescription}
-      </p>
-      <button class="btn btn-primary" type="submit" data-custom=${element.productID} onclick="updateData('${element.productID}')" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Edit</button>
-      <button class="btn btn-danger" type="submit" data-custom=${element.productID} onclick="removeProduct(this)">
-        Remove Product
-      </button>
+
+  // Empty LocalStorage Functionality
+  if (setDataToLocalStorage.length === 0) {
+    cardContainer.innerHTML = "";
+    cardContainer.innerHTML = `<a href="index.html"><img src="Images/empty_cart.jpg"></a>`;
+  } else {
+    setDataToLocalStorage.forEach((element) => {
+      let desc = truncateString(element.productDescription, 30);
+
+      cardContainer.innerHTML += `<div class="col-12 col-md-6 col-lg-4">
+    <div class="card" id="${element.productID}">
+    <h5 class="card-title">Name: ${element.productName}</h5>
+    <div class="card_image">
+      <img src="${element.productImage}" class="card-img-top" alt="Image" />
+      </div>
+      <div class="card-body">
+        
+        <p class="card-text">
+        Description: ${desc}
+
+        </p>
+        <p class="card-text">
+          Price: ₹ ${element.productPrice}
+        </p>
+        <p class="card-text">
+        ID: ${element.productID}
+        </p>
+        <button class="btn btn-primary" type="submit" data-custom=${element.productID} onclick="updateData('${element.productID}')" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Edit</button>
+        <button class="btn btn-danger" type="submit" data-custom=${element.productID} onclick="removeProduct(this)">
+          Remove Product
+        </button>
+      </div>
     </div>
-  </div>
-  </div>`;
-  });
+    </div>`;
+    });
+  }
 }
 
 loadDOM(setDataToLocalStorage);
@@ -73,7 +100,9 @@ function updateData(pID) {
     let index = setDataToLocalStorage.indexOf(updatedData);
     setDataToLocalStorage[index].productName = productName_modal.value;
     setDataToLocalStorage[index].productPrice = productPrice_modal.value;
-    setDataToLocalStorage[index].productImage = editImage;
+    setDataToLocalStorage[index].productImage = editImage
+      ? editImage
+      : updatedData.productImage;
     setDataToLocalStorage[index].productDescription =
       productDescription_modal.value;
 
@@ -87,6 +116,23 @@ function updateData(pID) {
 // Delete Data Functionality
 function removeProduct(e) {
   const pID = e.getAttribute("data-custom");
+
+  // Alert
+  swal({
+    title: "Are you sure?",
+    text: "Once deleted, you will not be able to recover this imaginary file!",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  }).then((willDelete) => {
+    if (willDelete) {
+      swal("Poof! Your imaginary file has been deleted!", {
+        icon: "success",
+      });
+    } else {
+      swal("Your imaginary file is safe!");
+    }
+  });
 
   const updatedData = setDataToLocalStorage.filter((element) => {
     return element.productID != pID;
@@ -151,10 +197,7 @@ searchProducts.addEventListener("input", (e) => {
   const val = e.target.value;
 
   let searchProducts = [];
-  console.log(val);
-
   for (i = 0; i < setDataToLocalStorage.length; i++) {
-    // console.log(getProduct[i].productName.toLowerCase().includes(search.toLowerCase()));
     if (
       setDataToLocalStorage[i].productName
         .toLowerCase()
@@ -165,19 +208,3 @@ searchProducts.addEventListener("input", (e) => {
   }
   loadDOM(searchProducts);
 });
-
-// Empty LocalStorage
-// let length = setDataToLocalStorage.length;
-// console.log(typeof setDataToLocalStorage);
-// console.log(length);
-
-// if (length == 0) {
-//   location.replace("empty_cart.html");
-// } else {
-//   location.replace("product.html");
-// }
-
-// Empty Cart - Image Show
-// Same ID Not Allow
-// Alert Box
-// CSS Media Query
