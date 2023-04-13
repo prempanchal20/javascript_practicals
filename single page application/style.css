@@ -521,6 +521,10 @@
     width: 50vw;
   }
 
+  .about_image {
+    margin-top: 20px;
+  }
+
   .carousel {
     width: 7vw;
   }
@@ -597,6 +601,10 @@
     height: auto;
   }
 
+  .icons i{
+    z-index: 1000;
+  }
+
   /* Features */
   .features {
     padding: 25px;
@@ -643,13 +651,14 @@
 
   .about_content {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   .about_image {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 10%;
   }
 
   .carousel {
@@ -674,7 +683,7 @@
 
   .contact_header {
     padding: 0px;
-    width: 80%;
+    width: 100%;
   }
 
   .contact_header h1 {
