@@ -24,9 +24,6 @@ productImage.addEventListener("change", (event) => {
 const submitBtn = async (event) => {
   event.preventDefault(); // Hold the Page after Submit button clicked
 
-  await swal("", "Product Added Sucessfully..!!", "success");
-  location.replace("product.html");
-
   // Get values from Input
   let productIDValue = productID.value;
   let productNameValue = productName.value;
@@ -34,27 +31,39 @@ const submitBtn = async (event) => {
   let productPriceValue = productPrice.value;
   let productDescriptionValue = productDescription.value;
 
-  let keyValue = {
-    productID: productIDValue,
-    productName: productNameValue,
-    productImage: productImageValue,
-    productPrice: productPriceValue,
-    productDescription: productDescriptionValue,
-  };
+  // Same ProductID Validation
+  const productData = setDataToLocalStorage.filter((element) => {
+    return element.productID == productIDValue;
+  });
 
-  // Push Data on Local Storage in Form of Key-Value Pair
-  setDataToLocalStorage.push(keyValue);
-  localStorage.setItem(
-    "localStorageData",
-    JSON.stringify(setDataToLocalStorage)
-  );
+  if (productData[0]) {
+    alert("ProductID is Same..!!");
+  } else {
+    await swal("", "Product Added Sucessfully..!!", "success");
+    location.replace("product.html");
 
-  // Clear The Data After Form Submit
-  productID.value = "";
-  productName.value = "";
-  productImage.value = "";
-  productPrice.value = "";
-  productDescription.value = "";
+    let keyValue = {
+      productID: productIDValue,
+      productName: productNameValue,
+      productImage: productImageValue,
+      productPrice: productPriceValue,
+      productDescription: productDescriptionValue,
+    };
+
+    // Push Data on Local Storage in Form of Key-Value Pair
+    setDataToLocalStorage.push(keyValue);
+    localStorage.setItem(
+      "localStorageData",
+      JSON.stringify(setDataToLocalStorage)
+    );
+
+    // Clear The Data After Form Submit
+    productID.value = "";
+    productName.value = "";
+    productImage.value = "";
+    productPrice.value = "";
+    productDescription.value = "";
+  }
 };
 
 const productForm = document.getElementById("productForm");

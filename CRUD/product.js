@@ -19,7 +19,6 @@ let pdesc_modal = document.getElementById("productDescription_modal");
 
 // Truncate Product Description
 function truncateString(productDescription, num) {
-  console.log(productDescription);
   if (productDescription.length <= num) {
     return productDescription;
   }
@@ -34,33 +33,40 @@ function loadDOM(setDataToLocalStorage) {
   // Empty LocalStorage Functionality
   if (setDataToLocalStorage.length === 0) {
     cardContainer.innerHTML = "";
-    cardContainer.innerHTML = `<a href="index.html"><img src="Images/empty_cart.jpg"></a>`;
+    cardContainer.innerHTML = `<h4 class="empty_cart_title"> There is No any Product, Please Click on Image to Add Products</h4><a class="empty_cart_img" href="index.html"><img src="Images/empty_cart.png"></a>`;
   } else {
     setDataToLocalStorage.forEach((element) => {
       let desc = truncateString(element.productDescription, 30);
 
       cardContainer.innerHTML += `<div class="col-12 col-md-6 col-lg-4">
     <div class="card" id="${element.productID}">
+    
     <h5 class="card-title">Name: ${element.productName}</h5>
     <div class="card_image">
       <img src="${element.productImage}" class="card-img-top" alt="Image" />
       </div>
       <div class="card-body">
-        
-        <p class="card-text">
-        Description: ${desc}
+      <div class="card-Data">
+      <p class="card-text"><b>
+      ID:</b> ${element.productID}
+      
+      </p>
+      <p class="card-text"><b>
+        Price:</b> ₹  ${element.productPrice}
+      </p>
+      </div>
+      
+        <p class="card-text"><b>
+        Description:</b> ${desc}
+        </p>
 
-        </p>
-        <p class="card-text">
-          Price: ₹ ${element.productPrice}
-        </p>
-        <p class="card-text">
-        ID: ${element.productID}
-        </p>
+        <div class="buttons">
         <button class="btn btn-primary" type="submit" data-custom=${element.productID} onclick="updateData('${element.productID}')" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Edit</button>
+
         <button class="btn btn-danger" type="submit" data-custom=${element.productID} onclick="removeProduct(this)">
-          Remove Product
+          Remove
         </button>
+      </div>
       </div>
     </div>
     </div>`;

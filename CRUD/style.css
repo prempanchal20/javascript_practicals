@@ -4,10 +4,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 /* Body*/
 body {
   background-color: #d1d1d1;
 }
+
 /* Navbar*/
 .navbar {
   background-color: #212529 !important;
@@ -17,6 +19,7 @@ body {
 .nav-item {
   margin: 0px 10px;
 }
+
 .nav-link:hover {
   color: #14a44d;
 }
@@ -30,6 +33,7 @@ body {
 .navbar-brand:hover {
   color: #14a44d;
 }
+
 .nav-link {
   color: white;
   font-weight: 400;
@@ -74,6 +78,31 @@ body {
   justify-content: center;
 }
 
+.card_image {
+  width: 70%;
+  margin-left: 15%;
+}
+
+.card-Data {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card-text {
+  display: flex;
+  justify-content: center;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons .btn {
+  margin-left: 10px;
+  width: 90px;
+  border-radius: 10px;
+}
+
 /* Sort and Filter */
 .container-sort {
   display: flex;
@@ -107,6 +136,16 @@ body {
   display: flex;
 }
 
+.search-prod {
+  width: 25%;
+}
+
+.empty_cart_title,
+.empty_cart_img {
+  display: flex;
+  justify-content: center;
+}
+
 .search-prod input {
   border-radius: 5px;
   height: 40px;
@@ -118,19 +157,41 @@ body {
 }
 
 /* Footer */
-.footer {
+
+.footer-go {
   background-color: #212529;
   color: white;
   font-weight: 400;
   position: fixed;
   bottom: 0;
   width: 100%;
+  margin-top: 35%;
 }
 
-.footer-Go {
+.footer_details {
   display: flex;
   justify-content: space-between;
 }
+
+.left,
+.right,
+.center {
+  padding: 7px;
+  flex: 1;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
 .left :hover {
   color: #14a44d;
 }
@@ -172,6 +233,7 @@ body {
   .search-prod {
     width: 100%;
   }
+
   .sort-prod {
     display: flex;
     align-items: center;
@@ -182,6 +244,7 @@ body {
     display: inline-block;
     width: 57px;
   }
+
   .arrow {
     display: flex;
   }
@@ -206,20 +269,28 @@ body {
   .productDetails {
     margin-top: 30px;
   }
+
+  .empty_cart_title {
+    text-align: center;
+  }
+  .empty_cart_img img {
+    width: 90%;
+  }
+
   /* Footer Section */
-  .footer {
-    margin-left: -5px;
-    display: flex;
-    flex-direction: column;
+  .footer-go {
     position: relative;
     bottom: 0;
   }
 
-  .footer-Go {
-    display: block;
+  .footer_details {
+    display: flex;
+    flex-direction: column;
   }
 
-  .left img {
-    margin-left: -5px;
+  .left,
+  .right,
+  .center {
+    display: flex;
   }
 }
