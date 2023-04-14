@@ -92,6 +92,10 @@ body {
   display: flex;
   justify-content: center;
 }
+.card-text :nth-child(3) {
+  overflow: scroll;
+}
+
 .buttons {
   display: flex;
   justify-content: center;
