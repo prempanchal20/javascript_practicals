@@ -83,17 +83,19 @@ body {
   margin-left: 15%;
 }
 
+.car-text :nth-child(3) {
+  margin-top: 10px;
+}
+
 .card-Data {
   display: flex;
   justify-content: space-evenly;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .card-text {
-  display: flex;
-  justify-content: center;
-}
-.card-text :nth-child(3) {
-  overflow: scroll;
+  margin-top: 10px;
 }
 
 .buttons {
@@ -105,6 +107,10 @@ body {
   margin-left: 10px;
   width: 90px;
   border-radius: 10px;
+}
+
+.card-text:last-child {
+  margin-bottom: 10px;
 }
 
 /* Sort and Filter */
