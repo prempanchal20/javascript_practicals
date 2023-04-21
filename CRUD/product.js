@@ -28,6 +28,7 @@ function truncateString(productDescription, num) {
 // Add Product Functionality
 const cardContainer = document.querySelector(".card-container");
 function loadDOM(setDataToLocalStorage) {
+  console.log("check loadDOM", setDataToLocalStorage);
   cardContainer.innerHTML = "";
 
   // Empty LocalStorage Functionality
@@ -135,16 +136,19 @@ function removeProduct(e) {
       swal("Poof! Your imaginary file has been deleted!", {
         icon: "success",
       });
+
+      const updatedData = setDataToLocalStorage.filter((element) => {
+        return element.productID != pID;
+      });
+
+      localStorage.setItem("localStorageData", JSON.stringify(updatedData));
+      loadDOM(updatedData);
+
+      console.log("product remove");
     } else {
       swal("Your imaginary file is safe!");
     }
   });
-
-  const updatedData = setDataToLocalStorage.filter((element) => {
-    return element.productID != pID;
-  });
-
-  localStorage.setItem("localStorageData", JSON.stringify(updatedData));
 }
 
 // Filter Functionality
