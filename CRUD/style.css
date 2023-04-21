@@ -202,11 +202,11 @@ body {
   text-align: center;
 }
 
-.left :hover {
+.left:hover {
   color: #14a44d;
 }
 
-.right :hover {
+.right:hover {
   color: #14a44d;
 }
 
@@ -222,6 +222,7 @@ body {
 
 /* Media Queries */
 @media only screen and (max-width: 740px) and (min-width: 320px) {
+
   /*Navbar*/
   .navbar-brand {
     font-size: 18px;
@@ -283,6 +284,7 @@ body {
   .empty_cart_title {
     text-align: center;
   }
+
   .empty_cart_img img {
     width: 90%;
   }
