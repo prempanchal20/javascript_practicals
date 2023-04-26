@@ -1,0 +1,307 @@
+/* Universal CSS*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body*/
+body {
+  background-color: #d1d1d1;
+}
+
+/* Navbar*/
+.navbar {
+  background-color: #212529 !important;
+  color: white !important;
+}
+
+.nav-item {
+  margin: 0px 10px;
+}
+
+.nav-link:hover {
+  color: #14a44d;
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 25px;
+  padding-left: 10px;
+}
+
+.navbar-brand:hover {
+  color: #14a44d;
+}
+
+.nav-link {
+  color: white;
+  font-weight: 400;
+}
+
+.nav-link:hover {
+  display: block;
+}
+
+.empty_cart_text {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+  color: black;
+}
+
+.empty_cart_text:hover {
+  color: #14a44d;
+}
+
+.empty_cart_image a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+}
+
+/* Main Section*/
+.main_section {
+  display: grid;
+  place-content: center;
+}
+
+/* Card */
+.card {
+  border: solid 1px #14a44d;
+}
+
+.card-title {
+  display: flex;
+  margin-top: 10%;
+  justify-content: center;
+}
+
+.card_image {
+  width: 70%;
+  margin-left: 15%;
+  height: 30vh;
+}
+
+.car-text :nth-child(3) {
+  margin-top: 10px;
+}
+
+.card-Data {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card-text {
+  margin-top: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons .btn {
+  margin-left: 10px;
+  width: 90px;
+  border-radius: 10px;
+}
+
+.card-text:last-child {
+  margin-bottom: 10px;
+}
+
+/* Sort and Filter */
+.container-sort {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px auto;
+}
+
+#sortBy {
+  background-color: rgb(53, 52, 52);
+  color: white;
+  height: 35px;
+  width: 155px;
+  border-radius: 5px;
+}
+
+.sort-label {
+  margin: auto 0px;
+  margin-right: 8px;
+}
+
+.arrow button {
+  height: 35px;
+  margin-left: 5px;
+  background-color: #212529;
+  color: white;
+  width: 30px;
+  border-radius: 5px;
+}
+
+.sort-prod {
+  display: flex;
+}
+
+.search-prod {
+  width: 25%;
+}
+
+.empty_cart_title,
+.empty_cart_img {
+  display: flex;
+  justify-content: center;
+}
+
+.search-prod input {
+  border-radius: 5px;
+  height: 40px;
+  padding-left: 5px;
+  background-color: #212529;
+  color: white;
+  display: list-item;
+  width: 100%;
+}
+
+/* Footer */
+
+.footer-go {
+  background-color: #212529;
+  color: white;
+  font-weight: 400;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-top: 35%;
+}
+
+.footer_details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left,
+.right,
+.center {
+  padding: 7px;
+  flex: 1;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.left:hover {
+  color: #14a44d;
+}
+
+.right:hover {
+  color: #14a44d;
+}
+
+.center a {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+
+.center:nth-child(2) a:hover {
+  color: #14a44d;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 740px) and (min-width: 320px) {
+  /*Navbar*/
+  .navbar-brand {
+    font-size: 18px;
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /*Sort and Filter*/
+  .container-sort {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .search-prod {
+    width: 100%;
+  }
+
+  .sort-prod {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .sort-prod .sort-label {
+    display: inline-block;
+    width: 57px;
+  }
+
+  .arrow {
+    display: flex;
+  }
+
+  /*Main Section*/
+  .sectionForm h1 {
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card_image img {
+    width: 75%;
+  }
+
+  .productDetails {
+    margin-top: 30px;
+  }
+
+  .empty_cart_title {
+    text-align: center;
+  }
+
+  .empty_cart_img img {
+    width: 90%;
+  }
+
+  /* Footer Section */
+  .footer-go {
+    position: relative;
+    bottom: 0;
+  }
+
+  .footer_details {
+    flex-direction: column;
+  }
+
+  .left,
+  .right,
+  .center {
+    display: flex;
+  }
+}
